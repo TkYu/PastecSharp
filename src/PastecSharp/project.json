@@ -1,0 +1,55 @@
+﻿{
+  "version": "1.0.0-*",
+  "title": "PastecSharp",
+  "description": "A pastec webapi wrapper",
+  "authors": [ "TsungKang" ],
+  "packOptions": {
+    "owners": [ "TsungKang" ],
+    "repository": {
+      "licenseUrl": "https://github.com/TkYu/PastecSharp/blob/master/LICENSE",
+      "projectUrl": "https://github.com/TkYu/PastecSharp/",
+      "type": "git",
+      "url": "https://github.com/TkYu/PastecSharp"
+    },
+    "tags": [
+      "pastec"
+    ]
+  },
+
+  "dependencies": {
+    "Newtonsoft.Json": "9.0.1"
+  },
+
+  "frameworks": {
+    "netstandard1.6": {
+      "imports": "dnxcore50",
+      "dependencies": {
+        "NETStandard.Library": "1.6.0"
+      }
+    },
+    "netstandard1.3": {
+      "dependencies": {
+        "System.Runtime": "4.1.0.*",
+        "System.Runtime.InteropServices": "4.1.0.*",
+        "System.Net.Http": "4.1.0.*",
+        "System.IO.FileSystem": "4.0.1.*"
+      }
+    },
+    "net45": {
+      "dependencies": {
+        "System.Net.Http": "4.0.0.*"
+      }
+    },
+    "net40": {},
+    "net20": {}
+  },
+  "buildOptions": {
+    "keyFile": "./key.snk",
+    "xmlDoc": true
+  },
+  "scripts": {
+    "postcompile": [
+      "dotnet pack --no-build --configuration %compile:Configuration%"
+    ]
+  }
+}
